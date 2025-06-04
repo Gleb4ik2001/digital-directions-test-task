@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 
 class TaskListAPIView(generics.ListAPIView):
     """Получение списка задач текущего пользователя с фильтрацией и сортировкой"""
+    
     serializer_class = TaskSerializer
     permission_classes = [permissions.IsAuthenticated]
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
@@ -22,6 +23,7 @@ class TaskListAPIView(generics.ListAPIView):
 
 class TaskCreateAPIView(generics.CreateAPIView):
     """Создание новой задачи"""
+    
     serializer_class = TaskSerializer
     permission_classes = [permissions.IsAuthenticated]
 
@@ -31,6 +33,7 @@ class TaskCreateAPIView(generics.CreateAPIView):
 
 class TaskRetrieveAPIView(generics.RetrieveAPIView):
     """Получение одной задачи по id (только своей)"""
+    
     serializer_class = TaskSerializer
     permission_classes = [permissions.IsAuthenticated]
 
@@ -40,6 +43,7 @@ class TaskRetrieveAPIView(generics.RetrieveAPIView):
 
 class TaskUpdateAPIView(generics.UpdateAPIView):
     """Обновление существующей задачи (PUT/PATCH)"""
+    
     serializer_class = TaskSerializer
     permission_classes = [permissions.IsAuthenticated]
 
@@ -49,6 +53,7 @@ class TaskUpdateAPIView(generics.UpdateAPIView):
 
 class TaskDestroyAPIView(generics.DestroyAPIView):
     """Удаление задачи"""
+    
     serializer_class = TaskSerializer
     permission_classes = [permissions.IsAuthenticated]
 
@@ -59,6 +64,7 @@ class TaskDestroyAPIView(generics.DestroyAPIView):
 
 class RegisterView(generics.CreateAPIView):
     """Регистрация нового пользователя"""
+    
     queryset = User.objects.all()
     serializer_class = RegisterSerializer
     permission_classes = [permissions.AllowAny]

@@ -25,8 +25,8 @@
 ## ⚙️ Установка
 
 ```bash
-git clone <URL>
-cd task_manager
+git clone https://github.com/Gleb4ik2001/digital-directions-test-task .
+cd digital-directions-test-task
 python -m venv env
 source env/bin/activate
 pip install -r requirements.txt
